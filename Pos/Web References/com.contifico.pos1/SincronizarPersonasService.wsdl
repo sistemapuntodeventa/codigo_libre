@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="" name="SincronizarPersonasService" targetNamespace="https://pos.contifico.com/sistema/pos/sincronizar_personas/service.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <plnk:partnerLinkType name="SincronizarPersonasService">
+    <plnk:role name="SincronizarPersonasService">
+      <plnk:portType name="tns:SincronizarPersonasService" />
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="">
+      <xs:element name="sincronizar_personas" type="typens:sincronizar_personas" />
+      <xs:element name="sincronizar_personasResponse" type="typens:sincronizar_personasResponse" />
+      <xs:complexType name="sincronizar_personas">
+        <xs:sequence>
+          <xs:element name="empresa" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sincronizar_personasResponse">
+        <xs:sequence>
+          <xs:element name="sincronizar_personasResult" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="sincronizar_personas">
+    <part name="sincronizar_personas" element="typens:sincronizar_personas" />
+  </message>
+  <message name="sincronizar_personasResponse">
+    <part name="sincronizar_personasResponse" element="typens:sincronizar_personasResponse" />
+  </message>
+  <portType name="SincronizarPersonasService">
+    <operation name="sincronizar_personas" parameterOrder="sincronizar_personas">
+      <documentation />
+      <input name="sincronizar_personas" message="typens:sincronizar_personas" />
+      <output name="sincronizar_personasResponse" message="typens:sincronizar_personasResponse" />
+    </operation>
+  </portType>
+  <binding name="SincronizarPersonasService" type="typens:SincronizarPersonasService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="sincronizar_personas">
+      <soap:operation soapAction="sincronizar_personas" style="document" />
+      <input name="sincronizar_personas">
+        <soap:body use="literal" />
+      </input>
+      <output name="sincronizar_personasResponse">
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SincronizarPersonasService">
+    <port name="SincronizarPersonasService" binding="typens:SincronizarPersonasService">
+      <soap:address location="" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="" name="SincronizarProductosService" targetNamespace="https://pos.contifico.com/sistema/pos/sincronizar_productos/service.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <plnk:partnerLinkType name="SincronizarProductosService">
+    <plnk:role name="SincronizarProductosService">
+      <plnk:portType name="tns:SincronizarProductosService" />
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="">
+      <xs:complexType name="sincronizar_productosResponse">
+        <xs:sequence>
+          <xs:element name="sincronizar_productosResult" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sincronizar_productos" type="typens:sincronizar_productos" />
+      <xs:complexType name="sincronizar_productos">
+        <xs:sequence>
+          <xs:element name="empresa" type="xs:int" />
+          <xs:element name="parametros" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sincronizar_productosResponse" type="typens:sincronizar_productosResponse" />
+    </xs:schema>
+  </types>
+  <message name="sincronizar_productos">
+    <part name="sincronizar_productos" element="typens:sincronizar_productos" />
+  </message>
+  <message name="sincronizar_productosResponse">
+    <part name="sincronizar_productosResponse" element="typens:sincronizar_productosResponse" />
+  </message>
+  <portType name="SincronizarProductosService">
+    <operation name="sincronizar_productos" parameterOrder="sincronizar_productos">
+      <documentation />
+      <input name="sincronizar_productos" message="typens:sincronizar_productos" />
+      <output name="sincronizar_productosResponse" message="typens:sincronizar_productosResponse" />
+    </operation>
+  </portType>
+  <binding name="SincronizarProductosService" type="typens:SincronizarProductosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="sincronizar_productos">
+      <soap:operation soapAction="sincronizar_productos" style="document" />
+      <input name="sincronizar_productos">
+        <soap:body use="literal" />
+      </input>
+      <output name="sincronizar_productosResponse">
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SincronizarProductosService">
+    <port name="SincronizarProductosService" binding="typens:SincronizarProductosService">
+      <soap:address location="" />
+    </port>
+  </service>
+</definitions>

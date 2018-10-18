@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="" name="SincronizarVentasService" targetNamespace="https://pos.contifico.com/sistema/pos/sincronizar_ventas/service.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <plnk:partnerLinkType name="SincronizarVentasService">
+    <plnk:role name="SincronizarVentasService">
+      <plnk:portType name="tns:SincronizarVentasService" />
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="">
+      <xs:element name="sincronizar_ventas" type="typens:sincronizar_ventas" />
+      <xs:complexType name="sincronizar_ventas">
+        <xs:sequence>
+          <xs:element name="empresa" type="xs:int" />
+          <xs:element name="xml_ventas" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sincronizar_ventasResponse" type="typens:sincronizar_ventasResponse" />
+      <xs:complexType name="sincronizar_ventasResponse">
+        <xs:sequence>
+          <xs:element name="sincronizar_ventasResult" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="sincronizar_ventas">
+    <part name="sincronizar_ventas" element="typens:sincronizar_ventas" />
+  </message>
+  <message name="sincronizar_ventasResponse">
+    <part name="sincronizar_ventasResponse" element="typens:sincronizar_ventasResponse" />
+  </message>
+  <portType name="SincronizarVentasService">
+    <operation name="sincronizar_ventas" parameterOrder="sincronizar_ventas">
+      <documentation />
+      <input name="sincronizar_ventas" message="typens:sincronizar_ventas" />
+      <output name="sincronizar_ventasResponse" message="typens:sincronizar_ventasResponse" />
+    </operation>
+  </portType>
+  <binding name="SincronizarVentasService" type="typens:SincronizarVentasService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="sincronizar_ventas">
+      <soap:operation soapAction="sincronizar_ventas" style="document" />
+      <input name="sincronizar_ventas">
+        <soap:body use="literal" />
+      </input>
+      <output name="sincronizar_ventasResponse">
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SincronizarVentasService">
+    <port name="SincronizarVentasService" binding="typens:SincronizarVentasService">
+      <soap:address location="" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Pos.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Pos_com_contifico_pos1_SincronizarPersonasService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="menuPrincipal" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-7928555</Value>
+    </Setting>
+    <Setting Name="submenu" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-8804161</Value>
+    </Setting>
+    <Setting Name="submenu1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-7290252</Value>
+    </Setting>
+    <Setting Name="tituloGrupos" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="textoBoton" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-2205048</Value>
+    </Setting>
+    <Setting Name="textoMenu" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="textoSub" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="textoSub1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-16777216</Value>
+    </Setting>
+    <Setting Name="textoLeyenda" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="textoListado" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="usarFondo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="estiloFondo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Pos_com_contifico_pos2_SincronizarVentasService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="Pos_com_contifico_pos_SincronizarProductosService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

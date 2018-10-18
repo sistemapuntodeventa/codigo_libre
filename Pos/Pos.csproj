@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B0C8090D-483D-43E2-B075-F0AB6064F276}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pos</RootNamespace>
+    <AssemblyName>Pos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LibPrintTicket">
+      <HintPath>.\LibPrintTicket.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.5.4\Assemblies\v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net4-client\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\frm_ buscarPromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_ buscarPromocion.Designer.cs">
+      <DependentUpon>frm_ buscarPromocion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_abono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_abono.Designer.cs">
+      <DependentUpon>frm_abono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_adicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_adicional.Designer.cs">
+      <DependentUpon>frm_adicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_adicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_adicionales.Designer.cs">
+      <DependentUpon>frm_adicionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_apariencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_apariencia.Designer.cs">
+      <DependentUpon>frm_apariencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_buscarAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_buscarAdicional.Designer.cs">
+      <DependentUpon>frm_buscarAdicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_buscarGuiaRemision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_buscarGuiaRemision.Designer.cs">
+      <DependentUpon>frm_buscarGuiaRemision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_caja.Designer.cs">
+      <DependentUpon>frm_caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_autorizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_autorizacion.Designer.cs">
+      <DependentUpon>frm_autorizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_buscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_buscarCliente.Designer.cs">
+      <DependentUpon>frm_buscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_autorizacionListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_autorizacionListado.Designer.cs">
+      <DependentUpon>frm_autorizacionListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_cajaListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_cajaListado.Designer.cs">
+      <DependentUpon>frm_cajaListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_cargando.Designer.cs">
+      <DependentUpon>frm_cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_clienteListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_clienteListado.Designer.cs">
+      <DependentUpon>frm_clienteListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_consultarSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_consultarSerie.Designer.cs">
+      <DependentUpon>frm_consultarSerie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_establecimientoListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_establecimientoListado.Designer.cs">
+      <DependentUpon>frm_establecimientoListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_factura.Designer.cs">
+      <DependentUpon>frm_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_facturaListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_facturaListado.Designer.cs">
+      <DependentUpon>frm_facturaListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_facturasPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_facturasPendientes.Designer.cs">
+      <DependentUpon>frm_facturasPendientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_guiaRemisionDefecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_guiaRemisionDefecto.Designer.cs">
+      <DependentUpon>frm_guiaRemisionDefecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_loginPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_loginPermiso.Designer.cs">
+      <DependentUpon>frm_loginPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_Mensaje.Designer.cs">
+      <DependentUpon>frm_Mensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_parametro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_parametro.Designer.cs">
+      <DependentUpon>frm_parametro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_permisoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_permisoMenu.Designer.cs">
+      <DependentUpon>frm_permisoMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_permisos.Designer.cs">
+      <DependentUpon>frm_permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_promocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_promocion.Designer.cs">
+      <DependentUpon>frm_promocion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_promocionCombo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_promocionCombo.Designer.cs">
+      <DependentUpon>frm_promocionCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_promocionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_promocionProducto.Designer.cs">
+      <DependentUpon>frm_promocionProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_sincronizarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_sincronizarVentas.Designer.cs">
+      <DependentUpon>frm_sincronizarVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_ubicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_ubicacion.Designer.cs">
+      <DependentUpon>frm_ubicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_ubicacionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_ubicacionProducto.Designer.cs">
+      <DependentUpon>frm_ubicacionProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_usuario.Designer.cs">
+      <DependentUpon>frm_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_usuarioBuscarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_usuarioBuscarEmpleado.Designer.cs">
+      <DependentUpon>frm_usuarioBuscarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_buscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_buscarProducto.designer.cs">
+      <DependentUpon>frm_buscarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_cliente.Designer.cs">
+      <DependentUpon>frm_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_configuracionPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_configuracionPos.Designer.cs">
+      <DependentUpon>frm_configuracionPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_configuracionPosListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_configuracionPosListado.Designer.cs">
+      <DependentUpon>frm_configuracionPosListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_usuarioListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_usuarioListado.Designer.cs">
+      <DependentUpon>frm_usuarioListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\empresa.Designer.cs">
+      <DependentUpon>empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_establecimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_establecimiento.Designer.cs">
+      <DependentUpon>frm_establecimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_empleado.Designer.cs">
+      <DependentUpon>frm_empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_empleadoListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_empleadoListado.Designer.cs">
+      <DependentUpon>frm_empleadoListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\loginUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\loginUsuario.Designer.cs">
+      <DependentUpon>loginUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_sincronizarPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_sincronizarPersonas.Designer.cs">
+      <DependentUpon>frm_sincronizarPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frm_sincronizarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_sincronizarProducto.Designer.cs">
+      <DependentUpon>frm_sincronizarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Reportes\frm_reporteProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Reportes\frm_reporteProducto.Designer.cs">
+      <DependentUpon>frm_reporteProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Reportes\frm_reporteSaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Reportes\frm_reporteSaldos.Designer.cs">
+      <DependentUpon>frm_reporteSaldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Reportes\frm_reporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Reportes\frm_reporteVentas.Designer.cs">
+      <DependentUpon>frm_reporteVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\ventana_principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\ventana_principal.Designer.cs">
+      <DependentUpon>ventana_principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coneccion\ClasesImpresion\Conversiones.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\Coordenada.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\CoordenadaTR.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\ImpresionAbono.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\ImpresionCierre.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\Impresion.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\ImpresionTexto.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\Pedido.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\RawPrinterHelper.cs" />
+    <Compile Include="Clases\Adicional.cs" />
+    <Compile Include="Clases\Apariencia.cs" />
+    <Compile Include="Clases\Caja.cs" />
+    <Compile Include="Clases\Autorizacion.cs" />
+    <Compile Include="Clases\Categoria.cs" />
+    <Compile Include="Coneccion\ClasesImpresion\Documento.cs" />
+    <Compile Include="Clases\ComboboxItem.cs" />
+    <Compile Include="Clases\Empresa.cs" />
+    <Compile Include="Clases\Establecimiento.cs" />
+    <Compile Include="Clases\Extensiones.cs" />
+    <Compile Include="Clases\FacturaCabecera.cs" />
+    <Compile Include="Clases\ConfiguracionPos.cs" />
+    <Compile Include="Clases\FacturaDetalle.cs" />
+    <Compile Include="Clases\FormaPago.cs" />
+    <Compile Include="Clases\General.cs" />
+    <Compile Include="Clases\Global.cs" />
+    <Compile Include="Clases\GuiaRemision.cs" />
+    <Compile Include="Clases\ItemMenu.cs" />
+    <Compile Include="Clases\Mail.cs" />
+    <Compile Include="Clases\Mensaje.cs" />
+    <Compile Include="Clases\Permiso.cs" />
+    <Compile Include="Clases\Persona.cs" />
+    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\ProductoCombo.cs" />
+    <Compile Include="Clases\Promocion.cs" />
+    <Compile Include="Clases\PromocionFactura.cs" />
+    <Compile Include="Clases\Rol.cs" />
+    <Compile Include="Clases\Ubicacion.cs" />
+    <Compile Include="Clases\Unidad.cs" />
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Coneccion\AdicionalTR.cs" />
+    <Compile Include="Coneccion\CajaTR.cs" />
+    <Compile Include="Coneccion\AutorizacionTR.cs" />
+    <Compile Include="Coneccion\CategoriaTR.cs" />
+    <Compile Include="Coneccion\ClienteTR.cs" />
+    <Compile Include="Coneccion\ConfiguracionPosTR.cs" />
+    <Compile Include="Coneccion\Conexion.cs" />
+    <Compile Include="Coneccion\EmpleadoTR.cs" />
+    <Compile Include="Coneccion\EmpresaTR.cs" />
+    <Compile Include="Coneccion\FacturaCabeceraTR.cs" />
+    <Compile Include="Coneccion\FacturaDetalleTR.cs" />
+    <Compile Include="Coneccion\FormaPagoTR.cs" />
+    <Compile Include="Coneccion\GuiaRemisionTR.cs" />
+    <Compile Include="Coneccion\MailTR.cs" />
+    <Compile Include="Coneccion\MenuTR.cs" />
+    <Compile Include="Coneccion\ParametroTR.cs" />
+    <Compile Include="Coneccion\PermisoTR.cs" />
+    <Compile Include="Coneccion\PersonaTR.cs" />
+    <Compile Include="Coneccion\ProductoTR.cs" />
+    <Compile Include="Coneccion\PromocionTR.cs" />
+    <Compile Include="Coneccion\TarjetaCreditoTR.cs" />
+    <Compile Include="Coneccion\UbicacionTR.cs" />
+    <Compile Include="Coneccion\UnidadTR.cs" />
+    <Compile Include="Coneccion\Sincronizacion.cs" />
+    <Compile Include="Coneccion\EstablecimientoTR.cs" />
+    <Compile Include="Coneccion\RolUsuarioTR.cs" />
+    <Compile Include="Coneccion\UsuarioTR.cs" />
+    <Compile Include="App\frm_guiaRemision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frm_guiaRemision.Designer.cs">
+      <DependentUpon>frm_guiaRemision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pos_contificoDataSet.cs">
+      <DependentUpon>pos_contificoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pos_contificoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_contificoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pos_contificoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_contificoDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pos_contificoDataSet2.cs">
+      <DependentUpon>pos_contificoDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pos_contificoDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_contificoDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="App\frm_ buscarPromocion.resx">
+      <DependentUpon>frm_ buscarPromocion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_abono.resx">
+      <DependentUpon>frm_abono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_adicional.resx">
+      <DependentUpon>frm_adicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_adicionales.resx">
+      <DependentUpon>frm_adicionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_apariencia.resx">
+      <DependentUpon>frm_apariencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_buscarAdicional.resx">
+      <DependentUpon>frm_buscarAdicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_buscarGuiaRemision.resx">
+      <DependentUpon>frm_buscarGuiaRemision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_caja.resx">
+      <DependentUpon>frm_caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_autorizacion.resx">
+      <DependentUpon>frm_autorizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_buscarCliente.resx">
+      <DependentUpon>frm_buscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_autorizacionListado.resx">
+      <DependentUpon>frm_autorizacionListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_cajaListado.resx">
+      <DependentUpon>frm_cajaListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_cargando.resx">
+      <DependentUpon>frm_cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_clienteListado.resx">
+      <DependentUpon>frm_clienteListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_consultarSerie.resx">
+      <DependentUpon>frm_consultarSerie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_establecimientoListado.resx">
+      <DependentUpon>frm_establecimientoListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_factura.resx">
+      <DependentUpon>frm_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_facturaListado.resx">
+      <DependentUpon>frm_facturaListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_facturasPendientes.resx">
+      <DependentUpon>frm_facturasPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_guiaRemisionDefecto.resx">
+      <DependentUpon>frm_guiaRemisionDefecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_loginPermiso.resx">
+      <DependentUpon>frm_loginPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_Mensaje.resx">
+      <DependentUpon>frm_Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_parametro.resx">
+      <DependentUpon>frm_parametro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_permisoMenu.resx">
+      <DependentUpon>frm_permisoMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_permisos.resx">
+      <DependentUpon>frm_permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_promocion.resx">
+      <DependentUpon>frm_promocion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_promocionCombo.resx">
+      <DependentUpon>frm_promocionCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_promocionProducto.resx">
+      <DependentUpon>frm_promocionProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_sincronizarVentas.resx">
+      <DependentUpon>frm_sincronizarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_ubicacion.resx">
+      <DependentUpon>frm_ubicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_ubicacionProducto.resx">
+      <DependentUpon>frm_ubicacionProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_usuario.resx">
+      <DependentUpon>frm_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_usuarioBuscarEmpleado.resx">
+      <DependentUpon>frm_usuarioBuscarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_buscarProducto.resx">
+      <DependentUpon>frm_buscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_cliente.resx">
+      <DependentUpon>frm_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_configuracionPos.resx">
+      <DependentUpon>frm_configuracionPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_configuracionPosListado.resx">
+      <DependentUpon>frm_configuracionPosListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_usuarioListado.resx">
+      <DependentUpon>frm_usuarioListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\empresa.resx">
+      <DependentUpon>empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_establecimiento.resx">
+      <DependentUpon>frm_establecimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_empleado.resx">
+      <DependentUpon>frm_empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_empleadoListado.resx">
+      <DependentUpon>frm_empleadoListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\loginUsuario.resx">
+      <DependentUpon>loginUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_sincronizarPersonas.resx">
+      <DependentUpon>frm_sincronizarPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_sincronizarProducto.resx">
+      <DependentUpon>frm_sincronizarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Reportes\frm_reporteProducto.resx">
+      <DependentUpon>frm_reporteProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Reportes\frm_reporteSaldos.resx">
+      <DependentUpon>frm_reporteSaldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Reportes\frm_reporteVentas.resx">
+      <DependentUpon>frm_reporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="App\Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="App\Reportes\Report3.rdlc" />
+    <EmbeddedResource Include="App\ventana_principal.resx">
+      <DependentUpon>ventana_principal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frm_guiaRemision.resx">
+      <DependentUpon>frm_guiaRemision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="pos_contificoDataSet.xsc">
+      <DependentUpon>pos_contificoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pos_contificoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_contificoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_contificoDataSet.xss">
+      <DependentUpon>pos_contificoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pos_contificoDataSet1.xsc">
+      <DependentUpon>pos_contificoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pos_contificoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_contificoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_contificoDataSet1.xss">
+      <DependentUpon>pos_contificoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pos_contificoDataSet2.xsc">
+      <DependentUpon>pos_contificoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pos_contificoDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_contificoDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_contificoDataSet2.xss">
+      <DependentUpon>pos_contificoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\com.contifico.pos1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\com.contifico.pos1\SincronizarPersonasService.wsdl" />
+    <None Include="Web References\com.contifico.pos1\sincronizar_personasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.contifico.pos2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\com.contifico.pos2\SincronizarVentasService.wsdl" />
+    <None Include="Web References\com.contifico.pos2\sincronizar_ventasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.contifico.pos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\com.contifico.pos\SincronizarProductosService.wsdl" />
+    <None Include="Web References\com.contifico.pos\sincronizar_productosResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books_024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo-024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puntodeventa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weather_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crear1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sincronizacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete copy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factura_pendiente.png" />
+    <None Include="Resources\factura1.png" />
+    <None Include="Resources\preFactura.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\factura.png" />
+    <None Include="Resources\guia_remision.png" />
+    <None Include="Resources\icono_impresora16x16.png" />
+    <None Include="imagenes\usbP.png" />
+    <None Include="imagenes\webP.png" />
+    <Content Include="Resources\borrar_fila.png" />
+    <None Include="Resources\icono.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\fondo.bmp" />
+    <None Include="Resources\editar_fila.bmp" />
+    <None Include="Resources\buscar_lupa.png" />
+    <None Include="Resources\chocolate_logo.jpg" />
+    <None Include="Resources\chocolate_logo.png" />
+    <None Include="Resources\boton_abrir.png" />
+    <None Include="Resources\comida.png" />
+    <Content Include="Resources\editar_fila.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://pos.contifico.com/sistema/pos/sincronizar_personas/%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.contifico.pos1\</RelPath>
+      <UpdateFromURL>https://pos.contifico.com/sistema/pos/sincronizar_personas/%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Pos_com_contifico_pos1_SincronizarPersonasService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pos.contifico.com/sistema/pos/sincronizar_productos/%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.contifico.pos\</RelPath>
+      <UpdateFromURL>https://pos.contifico.com/sistema/pos/sincronizar_productos/%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Pos_com_contifico_pos_SincronizarProductosService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pos.contifico.com/sistema/pos/sincronizar_ventas/%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.contifico.pos2\</RelPath>
+      <UpdateFromURL>https://pos.contifico.com/sistema/pos/sincronizar_ventas/%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Pos_com_contifico_pos2_SincronizarVentasService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
